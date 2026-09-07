@@ -1,0 +1,18 @@
+/*truco para uniformidad en textos para navegadores*/
+html{ /*selector*/
+    font-size: 62.5%;
+
+}
+
+body{
+    font-size: 16px; /*rem investigar*/
+}
+
+.my-title{
+    text-align: center;
+    font-size: 3.8rem;
+}
+.my-title span{
+    font-size: 2rem;
+}
+
