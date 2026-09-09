@@ -1,4 +1,13 @@
 /*truco para uniformidad en textos para navegadores*/
+
+:root{
+    --blanco: #FFF;
+    --ocuro: #212121; /*-- llamando variable*/
+    --primario:#ffc107;
+    --secundario: #26939f;
+    --gris:#757575;
+}
+
 html{ /*selector*/
     font-size: 62.5%;
 
@@ -15,4 +24,32 @@ body{
 .my-title span{
     font-size: 2rem;
 }
+.nav-bg{
+    background-color: var(--secundario);
+}
+.navegacion-principal{
+    background-color: var(--secundario);
+    display:flex; /*define como alinear elementos*/
+    justify-content: space-between; /*como lo vas a acomodar*/
+    font-weight: bold; /*Negritas*/
+    font-size: 2rem;
+}
+.navegacion-principal a:hover{
+    /*cuando pongo el cursos encima del link*/
+    background-color: var(--primario);
+    color: var(--ocuro)
+}
+.navegacion-principal a {
+    text-decoration: none;
+    color:var(--blanco);
+    padding: 1rem; /*paging es como un margen por fuera, significa relleno- -- -*/
+}
+
+.contenedor{
+    width: 120rem;
+    margin:0 auto; /*cuando ponemos margin-top:0 margin-top:0 margin-left margin-left: auto*/
+}
+
+
+
 
