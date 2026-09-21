@@ -1,98 +1,137 @@
-/*truco para uniformidad en textos para navegadores*/
-
-:root{
-    --blanco: #FFF;
-    --ocuro: #212121; /*-- llamando variable*/
-    --primario:#ffc107;
-    --secundario: #26939f;
-    --gris:#757575;
+:root {
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #ffc107;
+  --secundario: #26939f;
+  --gris: #757575;
+  --grisClaro: #b6b6b6;
 }
-
-html{ /*selector*/
-    font-size: 62.5%;
-
+ 
+/* Truco para uniformidad de texto entre navegadores */
+html {
+  font-size: 62.5%;
 }
-
-body{
-    font-size: 16px; /*rem investigar*/
-
+body {
+  font-size: 16px;
+  font-family: Krub, sans-serif;
+  background-image: linear-gradient (to top, var(--oscuro) 0%, var(--secundario) 100%);
 }
-
-h1{
-    font-size: 3.8rem;
+ 
+/*Tipografía*/
+ 
+h1 {
+  font-size: 3.8rem;
 }
-h2{
-    font-size: 2.8rem;
+ 
+h2 {
+  font-size: 2.8rem;
 }
+ 
 h3 {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
-h1,h2,h3{
-    text-align: center;
+ 
+h1,
+h2,
+h3 {
+  text-align: center;
 }
-.titulo span{
-    font-size: 2rem;
+ 
+.my-title span {
+  font-size: 2rem;
 }
-
-.my-title{
-    text-align: center;
-    font-size: 3.8rem;
+ 
+.navegacion-principal {
+  /* Margin es por fuera y padding es por dentro */
+  display: flex; /* Flexbox está diseñado para alinear elementos en tus diseños */
+  /* justify-content para FILAS / align-items es para COLUMNAS (flex-direction)*/
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 2rem;
+  align-items: center;
 }
-.my-title span{
-    font-size: 2rem;
+ 
+@media (min-width: 768px) {
+  .navegacion-principal {
+    flex-direction: row;
+  }
 }
-.nav-bg{
-    background-color: var(--secundario);
+ 
+/* Al poner el cursor en el hipervínculo*/
+.navegacion-principal a:hover {
+  background-color: var(--primario);
+  color: var(--oscuro);
 }
-.navegacion-principal{
-    background-color: var(--secundario);
-    display:flex; /*define como alinear elementos*/
-    justify-content: space-between; /*como lo vas a acomodar*/
-    font-weight: bold; /*Negritas*/
-    font-size: 2rem;
-}
-.navegacion-principal a:hover{
-    /*cuando pongo el cursos encima del link*/
-    background-color: var(--primario);
-    color: var(--ocuro)
-}
+ 
 .navegacion-principal a {
-    text-decoration: none;
-    color:var(--blanco);
-    padding: 1rem; /*paging es como un margen por fuera, significa relleno- -- -*/
+  color: var(--blanco);
+  text-decoration: none; /* Remueve el estilo subrayado en el texto */
+  padding: 1rem;
 }
-
-.contenedor{
-    width: 120rem;
-    margin:0 auto; /*cuando ponemos margin-top:0 margin-top:0 margin-left margin-left: auto*/
+ 
+.contenedor {
+  max-width: 120rem; /* 1200 pixeles porque 1 rem= 10px */
+  /* margin-top: 0; */
+  /* margin-bottom: 0; */
+  /* margin-right: auto; */
+  /* margin-left: auto; */
+  margin: 0 auto;
 }
-
-.hero{
-    background-image: url(../images/banner.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 450px;
-    position: relative;
+ 
+.nav-bg {
+  background-color: var(--secundario);
 }
-.contenido-hero{
-    position: absolute;
-    background-color: rgba(0,0,0,.3);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+ 
+.hero {
+  background-image: url(../images/banner.jpg); /* ../ es para regresar un nivel
+    de directorio ya que la carpeta "img" está afuera de "CSS" */
+  background-repeat: no-repeat; /* Sirve para evitar la repetición de la imagen cuando es pequeña */
+  background-size: cover; /*Sirve para cubir la imagen con todo el tamaño*/
+  height: 450px; /*Alto del elemento hero*/
+  position: relative; /*Para manipular la posición. El padre siempre
+    debe ser relative*/
 }
-
-.contenido-hero p, .contenido-hero h2{
-    color: var(--blanco);
+ 
+.contenido-hero {
+  position: absolute; /*Para manipular la posición. El hijo siempre
+    debe ser absolute*/
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  /*Alinear vertical y horizontalmente*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
-.ubicacion{
-    display:flex;
-    align-items: flex-end;
+ 
+.contenido-hero p,
+.contenido-hero h2 {
+  color: var(--blanco);
 }
-
-
-
+ 
+.ubicacion {
+  display: flex;
+  align-items: flex-end;
+}
+ 
+.boton {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  text-transform: uppercase; /* Convertir el texto en mayúsculas */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem 3rem;
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+  width: 90%;
+  text-align: center;
+}
+ 
+@media (min-width: 768px) {
+  .boton {
+    width: auto;
+  }
+}
+ 
